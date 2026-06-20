@@ -1,11 +1,13 @@
 import { useEffect } from "react"
 import { asyncGetUsers } from "./store/userAction"
+import { useDispatch } from "react-redux"
 
 const App = () => {
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    asyncGetUsers()
-  }, [])
+    dispatch(asyncGetUsers());
+  }, [dispatch])
 
 
   return (

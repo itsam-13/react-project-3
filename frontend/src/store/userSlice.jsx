@@ -10,7 +10,10 @@ const userSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
-        loadUser: (state, action) => { },
+        loadUser: (state, action) => { 
+            console.log(action);
+            
+        },
     }
 })
 export const { loadUser } = userSlice.actions;
