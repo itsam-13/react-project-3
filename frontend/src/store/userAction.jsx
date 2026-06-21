@@ -3,7 +3,7 @@ import { loadUser } from "./userSlice";
 
 export const asyncGetUsers = () => async (dispatch, getState) => {
     try {
-        console.log(getState());
+        console.log(getState( ));
         
 
         const res = await axios.get("/users")
