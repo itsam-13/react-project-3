@@ -1,27 +1,20 @@
-import { nanoid } from "@reduxjs/toolkit"
 import { useForm } from 'react-hook-form';
 import { Link } from "react-router-dom";
+import { asyncLoginUser } from '../store/actions/userActions';
+import { useDispatch } from 'react-redux';
 
 
 
 const Login = () => {
 
     const { register, reset, handleSubmit } = useForm()
-
-
+    const dispatch = useDispatch()
     const LoginHandler = (user) => {
-        
-        console.log(user);
-
+        dispatch(asyncLoginUser(user))
     }
 
     return (
         <form onSubmit={handleSubmit(LoginHandler)} className="flex flex-col w-1/2 justify-start items-start">
-            <input
-                {...register("username")}
-                className="mb-3 outline-0 border-b p-2 text-4xl"
-                type="text"
-                placeholder="John-Doe" />
 
             <input
                 {...register("email")}
